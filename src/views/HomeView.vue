@@ -3,7 +3,7 @@
     <h1>Home</h1>
     <p>Welcome to the Home page!</p>
     <p>{{ message }}</p>
-    <react-button v-if="showButton" :text="message" />
+    <react-button v-if="showButton" />
   </div>
 </template>
 

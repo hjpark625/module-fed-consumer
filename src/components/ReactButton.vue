@@ -9,16 +9,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createRoot } from 'react-dom/client'
 
-const props = defineProps<{ text: string }>()
+const props = defineProps<{ text?: string }>()
 
 async function fetchButton() {
-  const Button = (await import('provider/Button')).default as ({ text }: { text: string }) => JSX.Element
+  const Button = (await import('provider/Button')).default as ({ text }: { text?: string }) => JSX.Element
   return Button
 }
 
 const root = ref<HTMLDivElement | null>(null)
 const error = ref<boolean>(false)
-const ButtonComponent = ref<(({ text }: { text: string }) => JSX.Element) | null>(null)
+const ButtonComponent = ref<(({ text }: { text?: string }) => JSX.Element) | null>(null)
 
 function updateReactComponent() {
   if (!ButtonComponent.value || !!error.value) return
