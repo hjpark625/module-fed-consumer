@@ -3,6 +3,7 @@ const { DefinePlugin } = require('webpack')
 const { ModuleFederationPlugin } = require('webpack').container
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const deps = require('./package.json').dependencies
@@ -100,6 +101,7 @@ module.exports = (env, args) => {
       }
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new DefinePlugin({
         __VUE_OPTIONS_API__: 'true',
         __VUE_PROD_DEVTOOLS__: 'false',
