@@ -1,8 +1,11 @@
 {
   "name": "vue-module-provider",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "module federation provider part",
+  "engines": {
+    "node": "^21.0.0",
+    "pnpm": "^9.0.0"
+  },
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
