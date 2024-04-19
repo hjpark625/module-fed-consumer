@@ -10,7 +10,7 @@ const indexHtmlPath = path.join(distPath, 'index.html')
 if (!fs.existsSync(distPath) || !fs.existsSync(indexHtmlPath)) {
   console.error(
     chalk.red(
-      `The ${chalk.yellow('dist')} folder or ${chalk.yellow('index.html')} doesn't exist. Please run ${chalk.blue('pnpm run build')} first.`
+      `The ${chalk.yellow('dist')} folder or ${chalk.yellow('index.html')} doesn't exist.\nPlease run ${chalk.blue('pnpm run build')} first.\n`
     )
   )
   process.exit(1)
